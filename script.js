@@ -25,7 +25,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const formSuccess = document.getElementById("formSuccess");
 const formError = document.getElementById("formError");
 const contactForm = document.getElementById("contactForm");
-const backendUrl = "https://spies-somewhat-donations-proper.trycloudflare.com/lead";
+const backendUrl = "https://saints-olive-motorola-contributed.trycloudflare.com/lead";
 
 contactForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
