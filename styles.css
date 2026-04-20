@@ -357,6 +357,21 @@ textarea {
   font-size: 1rem;
 }
 
+.alert {
+  display: none;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(52, 211, 153, 0.5);
+  background: rgba(52, 211, 153, 0.12);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.alert.show {
+  display: block;
+}
+
 .contact-details {
   margin-top: 2rem;
   color: var(--muted);

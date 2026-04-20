@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Innocent Events | Bespoke Luxury Experiences</title>
+  <title>Innovent Events | Bespoke Luxury Experiences</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
   <div class="noise"></div>
   <header class="hero" id="top">
     <nav class="nav">
-      <div class="logo">Innocent Events</div>
+      <div class="logo">Innovent Events</div>
       <ul>
         <li><a href="#craft">Craft</a></li>
         <li><a href="#signature">Signature</a></li>
@@ -156,18 +156,26 @@
       <div class="contact-card">
         <p class="eyebrow">Let’s design your next story</p>
         <h2>Tell us the dream. We’ll choreograph the reality.</h2>
-        <form class="contact-form">
+        <div class="alert" id="formSuccess" role="status" aria-live="polite">
+          Welcome aboard — we’ve reserved a concierge slot and just emailed you the next steps.
+        </div>
+        <form class="contact-form" action="https://formsubmit.co/hello@innoventevents.com" method="POST">
+          <input type="hidden" name="_subject" value="Innovent Events · New Experience Inquiry">
+          <input type="hidden" name="_autoresponse" value="Welcome to Innovent Events — our concierge team has received your brief and will respond within two hours.">
+          <input type="hidden" name="_template" value="box">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://techinnovent0-collab.github.io/innovent-events/?contact=success">
           <div class="field">
             <label>Full name</label>
-            <input type="text" placeholder="Salma Al Saud" required>
+            <input type="text" name="name" placeholder="Salma Al Saud" required>
           </div>
           <div class="field">
             <label>Email</label>
-            <input type="email" placeholder="you@brand.com" required>
+            <input type="email" name="email" placeholder="you@brand.com" required>
           </div>
           <div class="field">
             <label>Experience goal</label>
-            <select required>
+            <select name="experience" required>
               <option value="">Select</option>
               <option>Luxury brand launch</option>
               <option>Private celebration</option>
@@ -178,13 +186,13 @@
           </div>
           <div class="field">
             <label>Notes</label>
-            <textarea rows="3" placeholder="Tell us the vibe, locale, or non-negotiables."></textarea>
+            <textarea rows="3" name="notes" placeholder="Tell us the vibe, locale, or non-negotiables."></textarea>
           </div>
           <button class="btn primary" type="submit">Reserve Production Slot</button>
         </form>
         <div class="contact-details">
           <p>Concierge line: <a href="tel:+971500000000">+971 • concierge</a></p>
-          <p>Email: <a href="mailto:hello@innocentevents.com">hello@innocentevents.com</a></p>
+          <p>Email: <a href="mailto:hello@innoventevents.com">hello@innoventevents.com</a></p>
           <p>HQ: Dubai Design District · Satellite studios in Riyadh & London</p>
         </div>
       </div>
@@ -192,7 +200,7 @@
   </main>
 
   <footer>
-    <p>© <span id="year"></span> Innocent Events. Crafted in Dubai, staged worldwide.</p>
+    <p>© <span id="year"></span> Innovent Events. Crafted in Dubai, staged worldwide.</p>
     <a href="#top">Back to top ↑</a>
   </footer>
 
