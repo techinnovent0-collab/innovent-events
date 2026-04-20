@@ -23,14 +23,38 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 
 const formSuccess = document.getElementById("formSuccess");
-const params = new URLSearchParams(window.location.search);
-if (params.get("contact") === "success") {
-  formSuccess?.classList.add("show");
-  setTimeout(() => formSuccess?.scrollIntoView({ behavior: "smooth", block: "center" }), 200);
-  if (window.history.replaceState) {
-    params.delete("contact");
-    const next = params.toString();
-    const newUrl = next ? `${window.location.pathname}?${next}` : window.location.pathname;
-    window.history.replaceState({}, "", newUrl);
+const formError = document.getElementById("formError");
+const contactForm = document.getElementById("contactForm");
+const backendUrl = "https://spies-somewhat-donations-proper.trycloudflare.com/lead";
+
+contactForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  formSuccess?.classList.remove("show");
+  formError?.classList.remove("show");
+
+  const submitButton = contactForm.querySelector("button[type=submit]");
+  submitButton.disabled = true;
+  submitButton.textContent = "Sending...";
+
+  try {
+    const formData = new FormData(contactForm);
+    const response = await fetch(backendUrl, {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error(`Request failed: ${response.status}`);
+    }
+
+    contactForm.reset();
+    formSuccess?.classList.add("show");
+    setTimeout(() => formSuccess?.scrollIntoView({ behavior: "smooth", block: "center" }), 200);
+  } catch (error) {
+    console.error("Lead submit error", error);
+    formError?.classList.add("show");
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "Reserve Production Slot";
   }
-}
+});

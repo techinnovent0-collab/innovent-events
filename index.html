@@ -159,13 +159,11 @@
         <div class="alert" id="formSuccess" role="status" aria-live="polite">
           Welcome aboard — we’ve reserved a concierge slot and just emailed you the next steps.
         </div>
-        <form class="contact-form" action="https://formsubmit.co/ahtisham.m@innovent.io" method="POST">
-          <input type="hidden" name="_subject" value="Innovent Events · New Experience Inquiry">
-          <input type="hidden" name="_autoresponse" value="Welcome to Innovent Events — our concierge team has received your brief and will respond within two hours.">
-          <input type="hidden" name="_cc" value="hello@innoventevents.com">
-          <input type="hidden" name="_template" value="box">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://techinnovent0-collab.github.io/innovent-events/?contact=success">
+        <div class="alert error" id="formError" role="alert" aria-live="assertive">
+          Something went wrong — please WhatsApp us or try again in a minute.
+        </div>
+        <form class="contact-form" id="contactForm">
+          <input type="hidden" name="token" value="innovent-royal-token">
           <div class="field">
             <label>Full name</label>
             <input type="text" name="name" placeholder="Salma Al Saud" required>

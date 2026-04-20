@@ -368,6 +368,11 @@ textarea {
   font-size: 0.95rem;
 }
 
+.alert.error {
+  border-color: rgba(248, 113, 113, 0.6);
+  background: rgba(248, 113, 113, 0.12);
+}
+
 .alert.show {
   display: block;
 }
