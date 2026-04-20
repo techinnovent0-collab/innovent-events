@@ -13,3 +13,8 @@ Flashy, classy single-page site for Innovent Events featuring immersive storytel
 python3 -m http.server 4000
 # visit http://localhost:4000
 ```
+
+### FormSubmit notes
+- Action: `https://formsubmit.co/ahtisham.m@innovent.io` (activation email goes to Ahtisham, CC to concierge)
+- Hidden `_cc` keeps hello@innoventevents.com copied on every submission
+- `_autoresponse` provides the visitor welcome email, `_next` preserves the success alert
